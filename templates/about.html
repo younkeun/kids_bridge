@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}회사 소개{% endblock %}
+
+{% block content %}
+
+<section class="vision">
+    <h2>비전과 미션</h2>
+    <p>
+        키즈브릿지는 아이들의 미래를 연결하는 창의적이고 혁신적인 교육 프로그램을 제공합니다.<br>
+        우리는 아이들이 스스로 생각하고, 배우며, 성장할 수 있는 환경을 조성합니다.
+    </p>
+</section>
+
+<section class="client">
+    <h2>주요 고객</h2>
+    <div class="client-logos">
+        <div class="client-logo">
+            <img src="{{ url_for('static', filename='images/gangnamgu.png') }}" alt="Gangnam District Logo">
+            <p>강남구어린이회관</p>
+        </div>
+        <div class="client-logo">
+            <img src="{{ url_for('static', filename='images/nolbal.jpg') }}" alt="Nolbal Logo">
+            <p>놀이의발견</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}게시판{% endblock %}
+
+{% block content %}
+<section class="board">
+    <h1>게시판</h1>
+
+    <!-- 새 글 작성 버튼 -->
+    <div class="write-new-post">
+        <a href="/board/new" class="btn-new-post">새 글 작성하기</a>
+    </div>
+
+    <!-- 글 목록 -->
+    <div class="post-list">
+        <h2>글 목록</h2>
+        {% for post in posts %}
+        <div class="post">
+            <p class="post-author"><strong>{{ post.author }}</strong> 님</p>
+            <p class="post-content">{{ post.content }}</p>
+            <p class="post-date">{{ post.date }}</p>
+        </div>
+        {% else %}
+        <p>등록된 글이 없습니다.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

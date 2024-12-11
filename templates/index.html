@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}홈{% endblock %}
+
+{% block content %}
+<div class="main-banner">
+    <h1>Welcome to KidsBridge</h1>
+    <p>아이들의 창의력을 키우는 최고의 교육 프로그램</p>
+</div>
+
+<!-- 키즈브릿지 소개 섹션 -->
+<section class="about-section animate-on-scroll">
+    <h2>키즈브릿지 소개</h2>
+    <p>키즈브릿지는 아이들을 위한 창의적인 영어 교육 서비스를 제공합니다.</p>
+
+    <div class="more-box">
+        <a href="/about" class="btn-more">더 보기</a>
+    </div>
+</section>
+
+<!-- 서비스 소개 섹션 -->
+<section class="services animate-on-scroll">
+    <h2>서비스 소개</h2>
+    <div class="service-boxes">
+        <div class="service-box">
+            <img src="static/images/play.jpg" alt="놀이 영어" class="service-img">
+            <h3>놀이 영어</h3>
+            <p>아이들이 다양한 활동을 통해 즐겁게 영어를 배울 수 있습니다.</p>
+        </div>
+        <div class="service-box">
+            <img src="static/images/one-day.jpg" alt="원데이 클래스" class="service-img">
+            <h3>원데이 클래스</h3>
+            <p>경제수업, 정서수업, 원어민 영어 수업 등 아이들이 흥미를 느낄 수 있는 다양한 체험 수업을 제공합니다.</p>
+        </div>
+        <div class="service-box">
+            <img src="static/images/event.png" alt="행사" class="service-img">
+            <h3>행사</h3>
+            <p>크리스마스, 캠핑, 올림픽 등 테마에 맞춘 1회성 이벤트 행사 입니다.</p>
+        </div>
+    </div>
+
+    <div class="more-box">
+        <a href="/services" class="btn-more">더 보기</a>
+    </div>
+</section>
+{% endblock %}
