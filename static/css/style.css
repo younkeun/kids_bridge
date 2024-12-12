@@ -107,10 +107,13 @@ header nav ul li a:hover {
     display: flex !important; /* 호버 시 하위 메뉴 표시 */
 }
 
-/* 모바일 메뉴 버튼 */
+/* 모바일 메뉴 토글 버튼 (햄버거 메뉴) */
 .menu-toggle {
-    display: none; /* 기본적으로 숨김 */
+    display: block;
     cursor: pointer;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
 }
 
 /* 메인 배너 */
@@ -229,12 +232,21 @@ footer a:hover {
     }
 
     header nav ul {
-        flex-direction: column;
-        display: none; /* 기본적으로 숨김 */
+        display: none;
+        flex-direction: column; /* 세로 정렬 */
+        gap: 10px;
+        background-color: #f8f8f8; /* 메뉴 배경색 */
+        position: absolute;
+        top: 60px; /* 헤더 아래 위치 */
+        right: 0;
+        left: 0;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+        z-index: 1000;
     }
-
+    
     header nav ul.show {
-        display: flex; /* 버튼 클릭 시 메뉴 표시 */
+        display: flex;
     }
 
     .main-banner {
