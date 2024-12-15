@@ -5,18 +5,18 @@
     <button class="menu-toggle">☰</button>    
     <nav>
         <ul>
-            <li><a href="/about">회사소개</a></li>
+            <li><a href="/about" class="{% if request.path == '/about' %}active{% endif %}">회사소개</a></li>
             <li class="dropdown">
-                <a href="/services">서비스</a>
+                <a href="/services" class="{% if request.path.startswith('/services') %}active{% endif %}">서비스</a>
                 <ul class="dropdown-menu">
                     <li><a href="/services#play-english">놀이 영어</a></li>
                     <li><a href="/services#one-day-class">원데이 클래스</a></li>
                     <li><a href="/services#event">행사</a></li>
                 </ul>
             </li>
-            <li><a href="/contact">연락처</a></li>
-            <li><a href="/board">게시판</a></li>
-            <li><a href="/gallery">이미지갤러리</a></li>
+            <li><a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}">연락처</a></li>
+            <li><a href="/board" class="{% if request.path == '/board' %}active{% endif %}">게시판</a></li>
+            <li><a href="/gallery" class="{% if request.path == '/gallery' %}active{% endif %}">이미지갤러리</a></li>
         </ul>
     </nav>
 </header>

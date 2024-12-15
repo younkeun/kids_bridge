@@ -9,6 +9,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // 드롭다운 메뉴 동작
+    const dropdown = document.querySelector(".dropdown");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+    let hoverTimeout;
+    
+    if (dropdown && dropdownMenu) {
+        dropdown.addEventListener("mouseover", () => {
+            dropdownMenu.classList.add("is-active");
+        });
+
+        dropdown.addEventListener("mouseout", (e) => {
+            if (!dropdown.contains(e.relatedTarget)) {
+                dropdownMenu.classList.remove("is-active");
+            }
+        });
+
+        dropdownMenu.addEventListener("mouseover", () => {
+            dropdownMenu.classList.add("is-active");
+        });
+
+        dropdownMenu.addEventListener("mouseout", (e) => {
+            if (!dropdown.contains(e.relatedTarget)) {
+                dropdownMenu.classList.remove("is-active");
+            }
+        });
+    }
+
     // 스크롤 애니메이션
     const animatedElements = document.querySelectorAll(".animate-on-scroll");
 
