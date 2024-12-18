@@ -1,6 +1,18 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% block title %}갤러리{% endblock %}
 
 {% block content %}
-    <h1>kids_bridge@naver.1111com</h1>
-    <p>궁금한 사항이 있으시면 연락주세요.</p>
+<section class="gallery">
+    <h1>수업사진</h1>
+    <div class="gallery-container">
+        {% for image in images %}
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/gallery/' ~ image) }}" alt="Gallery Image">
+        </div>
+        {% else %}
+        <p>갤러리에 이미지가 없습니다.</p>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}

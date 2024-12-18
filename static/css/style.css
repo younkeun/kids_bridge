@@ -332,9 +332,9 @@ main.content {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    width: 500px; /* 각 박스의 최대 너비 설정 */
-    height: 150px;
-    margin: 0 auto; /* 박스도 개별적으로 가운데 정렬 */
+    width: 500px; /* 데스크탑에서는 고정 너비 유지 */
+    height: 170px;
+    margin: 0 auto; /* 가운데 정렬 */
 }
 
 .strength-box p {
@@ -457,6 +457,210 @@ main.content {
 }
 
 /* ============================
+   게시판 스타일
+   ============================ */
+   .board {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.board h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.write-new-post {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.btn-new-post {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-new-post:hover {
+    background-color: #0056b3;
+}
+
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.board-table th,
+.board-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.board-table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #333;
+}
+
+.board-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.board-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* 번호 열 */
+.board-table td:first-child {
+    width: 10%;
+}
+
+/* 제목 열 */
+.board-table td:nth-child(2) {
+    text-align: left;
+    width: 50%;
+}
+
+/* 기타 열 (작성자, 등록일, 조회수) */
+.board-table td:nth-child(3),
+.board-table td:nth-child(4),
+.board-table td:nth-child(5) {
+    width: 10%;
+}
+
+/* 제목 링크 스타일 */
+.post-title-link {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.post-title-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* ============================
+   새 글 작성 스타일
+   ============================ */
+.new-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.new-post h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* 작성자, 작성일, 조회수 스타일 */
+.post-meta {
+    font-size: 14px;
+    color: #888; /* 눈에 덜 띄는 색상 */
+    text-align: right;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 10px; /* 위쪽 여백 */
+    right: 10px; /* 오른쪽 구석 */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* ============================
+   갤러리 스타일
+   ============================ */
+   .gallery {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.gallery h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+
+/* ============================
    푸터
    ============================ */
 footer {
@@ -517,5 +721,51 @@ footer a:hover {
     .service-boxes {
         flex-direction: column; /* 세로로 정렬 */
         gap: 15px;
+    }
+
+    .strength-boxes {
+        grid-template-columns: 1fr; /* 작은 화면에서는 한 열만 표시 */
+        gap: 10px; /* 간격 좁힘 */
+    }
+
+    .strength-box {
+        width: 90%; /* 화면 너비의 90% 사용 */
+        height: auto; /* 높이 자동 조정 */
+    }
+    
+    .post {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .btn-new-post {
+        font-size: 12px;
+        padding: 8px 12px;
+    }   
+
+    .board-table {
+        font-size: 12px;
+    }
+
+    .board-table th, .board-table td {
+        padding: 8px;
+    }
+
+    .board h1 {
+        font-size: 20px;
+    }
+
+    .btn-new-post {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .strength-box {
+        width: 100%; /* 화면 너비에 맞춤 */
+        max-width: 700px; /* 중간 화면 최대 너비 설정 */
+        height: auto; /* 높이 자동 조정 */
     }
 }

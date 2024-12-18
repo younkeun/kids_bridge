@@ -8,21 +8,37 @@
 
     <!-- 새 글 작성 버튼 -->
     <div class="write-new-post">
-        <a href="/board/new" class="btn-new-post">새 글 작성하기</a>
+        <a href="/board/new" class="btn-new-post">+ 새 글 작성</a>
     </div>
 
     <!-- 글 목록 -->
     <div class="post-list">
-        <h2>글 목록</h2>
-        {% for post in posts %}
-        <div class="post">
-            <p class="post-author"><strong>{{ post.author }}</strong> 님</p>
-            <p class="post-content">{{ post.content }}</p>
-            <p class="post-date">{{ post.date }}</p>
-        </div>
-        {% else %}
-        <p>등록된 글이 없습니다.</p>
-        {% endfor %}
+        <table class="board-table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>등록일</th>
+                    <th>조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td><a href="/board/{{ post.id }}" class="post-title-link">{{ post.title }}</a></td>
+                    <td>{{ post.author }}</td>
+                    <td>{{ post.date }}</td>
+                    <td>{{ post.views }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">등록된 글이 없습니다.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </section>
 {% endblock %}
